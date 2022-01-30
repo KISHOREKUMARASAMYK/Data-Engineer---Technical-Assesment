@@ -135,11 +135,156 @@ for key,value in data.items():
                                 else:
                                     continue
                         elif(check=='Encounter'):
-                            break
+                            for key2,value2 in value1.items():
+                                if(isinstance(value2,dict)):
+                                    for key3,value3 in value2.items():
+                                        if(isinstance(value3,list)):
+                                            # print(key3,":",value3[0])
+                                            continue
+                                        else:
+                                            # print(key3,":",value3)
+                                            continue
+                                if(isinstance(value2,list)):
+                                    if(key2=='identifier'):
+                                        for identifier in value2:
+                                            for key3,value3 in identifier.items():
+                                                # print(key3,":",value3)
+                                                continue
+                                    elif(key2=='type'):
+                                        for types in value2:
+                                            for key3,value3 in types.items():
+                                                if(isinstance(value3,list)):
+                                                    for coding in value3:
+                                                        for key4,value4 in coding.items():
+                                                            # print(key4,":",value4)
+                                                            continue
+                                                else:
+                                                    # print(key3,":",value3)
+                                                    continue
+                                    elif(key2=='participant'):
+                                        for participant in value2:
+                                            for key3,value3 in participant.items():
+                                                if(isinstance(value3,dict)):
+                                                    for key4,value4 in value3.items():
+                                                        # print(key4,":",value4)
+                                                        continue
+                                                elif(isinstance(value3,list)):
+                                                    for types in value3:
+                                                        for key4,value4 in types.items():
+                                                            if(isinstance(value4,list)):
+                                                                for coding in value4:
+                                                                    for key5,value5 in coding.items():
+                                                                        # print(key5,":",value5)
+                                                                        continue
+                                                            else:
+                                                                # print(key4,":",value4)
+                                                                continue    
+                                                else:
+                                                    continue
+                                    elif(key2=='location'):
+                                        for location in value2:
+                                            for key3,value3 in location.items():
+                                                if(isinstance(value3,dict)):
+                                                    for key4,value4 in value3.items():
+                                                        # print(key4,":",value4)
+                                                        continue
+                                                else:
+                                                    continue
+                                    elif(key2=='reasonCode'):
+                                        for reasonCode in value2:
+                                            for key3,value3 in reasonCode.items():
+                                                if(isinstance(value3,list)):
+                                                    for coding in value3:
+                                                        for key4,value4 in coding.items():
+                                                            # print(key4,":",value4)
+                                                            continue
+                                                else:
+                                                    continue
+                                    else:
+                                        continue
+                                else:
+                                    # print(key2,":",value2)
+                                    continue            
                         elif(check=='Condition'):
-                            break
+                            for key2,value2 in value1.items():
+                                if(isinstance(value2,dict)):
+                                    for key3,value3 in value2.items():
+                                        if(isinstance(value3,list)):
+                                            for coding in value3:
+                                                if(isinstance(coding,dict)):
+                                                    for key4,value4 in coding.items():
+                                                        # print(key4,":",value4)
+                                                        continue
+                                                else:
+                                                    if(key3=='profile'):
+                                                        # print(key3,":",value3[0])
+                                                        continue
+                                                    else:
+                                                        # print(key3,":",value3)
+                                                        continue
+                                        else:
+                                            # print(key3,":",value3)
+                                            continue
+                                    pass
+                                elif(isinstance(value2,list)):
+                                    for category in value2:
+                                        for key3,value3 in category.items():
+                                            for coding in value3:
+                                                for key4,value4 in coding.items():
+                                                    # print(key4,":",value4)
+                                                    continue
+                                else:
+                                    # print(key2,":",value2)
+                                    continue
                         elif(check=='DiagnosticReport'):
-                            break
+                            for key2,value2 in value1.items():
+                                if(isinstance(value2,dict)):
+                                    for key3,value3 in value2.items():
+                                        if(isinstance(value3,list)):
+                                            for coding in value3:
+                                                if(isinstance(coding,dict)):
+                                                    for key4,value4 in coding.items():
+                                                        # print(key4,":",value4)
+                                                        continue
+                                                else:
+                                                    if(key3=='profile'):
+                                                        # print(key3,":",value3[0])
+                                                        continue
+                                                    else:
+                                                        continue
+
+                                        else:
+                                            # print(key3,":",value3)
+                                            continue
+                                    continue
+                                elif(isinstance(value2,list)):
+                                    if(key2=='category'):
+                                        for category in value2:
+                                            for key3,value3 in category.items():
+                                                for coding in value3:
+                                                    for key4,value4 in coding.items():
+                                                        # print(key4,":",value4)
+                                                        continue
+                                    elif(key2=='performer'):
+                                        for performer in value2:
+                                            for key3,value3 in performer.items():
+                                                # print(key3,":",value3)
+                                                continue
+                                    elif(key2=='presentedForm'):
+                                        for presentedForm in value2:
+                                            for key3,value3 in presentedForm.items():
+                                                # print(key3,":",value3)
+                                                continue
+                                    elif(key2=='result'):
+                                        for result in value2:
+                                            for key3,value3 in result.items():
+                                                # print(key3,":",value3)
+                                                continue
+                                    else:
+                                        continue
+                                else:
+                                    # print(key2,":",value2)
+                                    continue
                         elif(check=='DocumentReference'):
                             break
                         elif(check=='Claim'):
@@ -168,12 +313,8 @@ for key,value in data.items():
                             break
                         else:
                             break
-                        
 
-
-            break
-
-                            
+        break                   
 
 
 # f.close()
